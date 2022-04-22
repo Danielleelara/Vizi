@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api';
+import { Link } from "react-router-dom";
+import { CgEye} from "react-icons/cg";
 
 export default function Payments() {
   const [payments, setPayments] = useState([]);
@@ -12,20 +14,24 @@ export default function Payments() {
         getProducts();
   })
 
-  console.log('pagamentos', payments)
   return (
     <div>
-      <table>
+      <table className="list-group">
       {
         payments.map((payment)=> (
-          <tr>
-            <td>Data de Pagamento: {payment.paymentDate}`</td>
-            <td>Valor da Compra: R${payment.amount}</td>
-            <td>Status do Pagamento: {payment.status}</td>
-          </tr>
+          <td>
+            <tr className="list-group-item">Data de Pagamento: {payment.paymentDate}</tr>
+            <tr className="list-group-item">Valor da Compra: R${payment.amount}</tr>
+            <tr className="list-group-item">Status do Pagamento: {payment.status}</tr>
+            <span>
+            <Link to={`/details/${payment.id}`}>
+                    <CgEye  size={20} color="gray" />
+            </Link>
+            </span>
+          </td>
         ))
       }
-      </table>
+    </table>
     </div>
   )
 }

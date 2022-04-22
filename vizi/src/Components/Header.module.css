@@ -1,0 +1,13 @@
+.link {
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    color: #816882;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #816882;
+}

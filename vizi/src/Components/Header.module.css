@@ -1,20 +1,18 @@
 .link {
- 
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-top: 0.5em;
-    color: #230c0f;
+    color: #77581c;
     text-decoration: none;
     cursor: pointer;
-   
 }
 
 .link:hover {
     color: #816882;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
-header{
+.header{
     background-color: #cba328;
 }

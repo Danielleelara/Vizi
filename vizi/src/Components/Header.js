@@ -6,8 +6,8 @@ const Header = () => {
     <header className={styles.header}>
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
-          <Link to={'/'} className={styles.link}>Home</Link>
-          <Link to={'/payments'} className={styles.link}>Pagamentos</Link>
+          <Link to={'/'} className={`${styles.link} ${"nav-link active"}`}>Home</Link>
+          <Link to={'/payments'} className={`${styles.link} ${"nav-link active"} ${"page"}`}>Pagamentos</Link>
         </div>
       </nav>
     </header>

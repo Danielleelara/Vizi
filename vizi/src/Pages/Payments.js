@@ -22,7 +22,7 @@ export default function Payments() {
   };
 
   return (
-    <table className="table table-striped table-light mt-3">
+    <table className="table table-striped mt-3 ">
       <thead>
         <tr>
           <th>Data de Pagamento:</th>
@@ -32,7 +32,7 @@ export default function Payments() {
         </tr>
       </thead>
       {payments.map((payment) => (
-        <tbody>
+        <tbody  key={payment.id}>
           <tr>
             <td>{formatDate(payment.paymentDate)}</td>
             <td>R$ {payment.amount}</td>

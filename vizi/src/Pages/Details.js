@@ -22,16 +22,22 @@ export default function Details() {
     getDetails(id);
   }, [id]);
 
+  const formatDate = (dateInString) => {
+    return new Intl.DateTimeFormat("pt-BR", {
+      timeZone: "UTC",
+    }).format(new Date(dateInString).getTime());
+  };
+
 
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        <li>Data de Pagamento: {payment?.paymentDate}</li>
-        <li>Data de Abertura da Geladeira: {transactions?.openFridge}</li>
-        <li>Data de Fechamento da Geladeira: {transactions?.closeFridge}</li>
+        <li>Data de Pagamento: {(payment?.paymentDate)}</li>
+        <li>Data de Abertura da Geladeira: {(transactions?.openFridge)}</li>
+        <li>Data de Fechamento da Geladeira: {(transactions?.closeFridge)}</li>
         <li>Valor Total: R$ {payment?.amount}</li>
       </ul>
-      <table className="table table-striped">
+      <table className="table table-bordered">
         <tr>
           <th scope="col">Produto</th>
           <th scope="col">Descrição</th>
@@ -49,7 +55,7 @@ export default function Details() {
                 />
               </td>
               <td>{product.name}</td>
-              <td>{product.price}</td>
+              <td>R$ {product.price}</td>
               <td>{product.quantity}</td>
             </tr>
           );

@@ -1,8 +1,19 @@
 .container {
     background-color: d6f49d;
+    width: 70%;
+    margin: auto;
 }
 
 .list {
   list-style:none;
   padding: 2rem;
+}
+
+table{
+  border: 1px solid white;
+  background-color: #dbecba!important;
+}
+
+tr {
+  font-weight: 500;
 }

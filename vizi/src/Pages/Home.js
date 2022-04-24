@@ -18,7 +18,7 @@ export default function Home() {
         <div className={styles.container}>
        { products.map ((product)=> {
             return (                
-                    <div className={styles.card}>
+                    <div key={product.id}className={styles.card}>
                         <img src={product.thumb} alt="Imagem do produto"/>
                         <div className="card-body">
                             <h5 className="card-title">{product.name}</h5>

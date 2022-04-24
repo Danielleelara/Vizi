@@ -22,35 +22,37 @@ export default function Payments() {
   };
 
   return (
-    <table className="table table-striped mt-3 ">
-      <thead>
-        <tr>
-          <th>Data de Pagamento:</th>
-          <th>Valor da Compra:</th>
-          <th>Status do Pagamento:</th>
-          <th>Ações:</th>
-        </tr>
-      </thead>
-      {payments.map((payment) => (
-        <tbody  key={payment.id}>
+    <main className="page">
+      <table className="table table-striped mt-3">
+        <thead>
           <tr>
-            <td>{formatDate(payment.paymentDate)}</td>
-            <td>R$ {payment.amount}</td>
-            <td>
-              {payment.status === "PAID"
-                ? "Pagamento Realizado"
-                : "Pagamento Pendente"}
-            </td>
-            <td>
-              <span className={styles.container}>
-                <Link to={`/details/${payment.id}`}>
-                  <CgEye size={20} color="black" />
-                </Link>
-              </span>
-            </td>
+            <th>Data de Pagamento:</th>
+            <th>Valor da Compra:</th>
+            <th>Status do Pagamento:</th>
+            <th>Ações:</th>
           </tr>
-        </tbody>
-      ))}
-    </table>
+        </thead>
+        {payments.map((payment) => (
+          <tbody key={payment.id}>
+            <tr>
+              <td>{formatDate(payment.paymentDate)}</td>
+              <td>R$ {payment.amount}</td>
+              <td>
+                {payment.status === "PAID"
+                  ? "Pagamento Realizado"
+                  : "Pagamento Pendente"}
+              </td>
+              <td>
+                <span className={styles.container}>
+                  <Link to={`/details/${payment.id}`}>
+                    <CgEye size={20} color="black" />
+                  </Link>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+    </main>
   );
 }

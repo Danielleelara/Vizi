@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import api from "../api";
 import { useParams } from "react-router";
-import styles from './Details.module.css';
+import styles from "./Details.module.css";
 
 export default function Details() {
   const { id } = useParams();
@@ -23,46 +23,67 @@ export default function Details() {
   }, [id]);
 
   const formatDate = (dateInString) => {
-    return new Intl.DateTimeFormat("pt-BR", {
-      timeZone: "UTC",
-    }).format(new Date(dateInString).getTime());
+    if (dateInString) {
+      return new Intl.DateTimeFormat("pt-BR", {
+        timeZone: "UTC",
+      }).format(new Date(dateInString).getTime());
+    }
   };
 
+  const formatMoney = (value) => {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(value);
+  };
 
   return (
-    <div className={styles.container}>
-      <ul className={styles.list}>
-        <li>Data de Pagamento: {(payment?.paymentDate)}</li>
-        <li>Data de Abertura da Geladeira: {(transactions?.openFridge)}</li>
-        <li>Data de Fechamento da Geladeira: {(transactions?.closeFridge)}</li>
-        <li>Valor Total: R$ {payment?.amount}</li>
-      </ul>
-      <table className="table table-bordered">
-      <tbody>
-        <tr>
-          <th scope="col">Produto</th>
-          <th scope="col">Descrição</th>
-          <th scope="col">Preço Unitário</th>
-          <th scope="col">Quantidade</th>
-        </tr>
-        {transactions?.products.map((product) => {
-          return (
-            <tr key={product.id}>
-              <td>
-                <img
-                  className="img-thumbnail img-fluid w-25"
-                  src={product.thumb}
-                  alt={product.name}
-                />
-              </td>
-              <td>{product.name}</td>
-              <td>R$ {product.price}</td>
-              <td>{product.quantity}</td>
+    <main className="page">
+      <div className={`${styles.container}`}>
+        <ul className={styles.list}>
+          <li className="list-group-item">
+            Data de Pagamento:{" "}
+            <strong>{formatDate(payment?.paymentDate)}</strong>
+          </li>
+          <li className="list-group-item">
+            Data de Abertura da Geladeira:{" "}
+            <strong>{formatDate(transactions?.openFridge)}</strong>
+          </li>
+          <li className="list-group-item">
+            Data de Fechamento da Geladeira:{" "}
+            <strong>{formatDate(transactions?.closeFridge)}</strong>
+          </li>
+          <li className="list-group-item">
+            Valor Total: <strong>{formatMoney(payment?.amount)}</strong>
+          </li>
+        </ul>
+        <table className="table table-bordered">
+          <tbody>
+            <tr>
+              <th scope="col">Produto</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Preço Unitário</th>
+              <th scope="col">Quantidade</th>
             </tr>
-          );
-        })}
-        </tbody>
-      </table>
-    </div>
+            {transactions?.products.map((product) => {
+              return (
+                <tr key={product.id}>
+                  <td>
+                    <img
+                      className="img-thumbnail img-fluid w-25"
+                      src={product.thumb}
+                      alt={product.name}
+                    />
+                  </td>
+                  <td>{product.name}</td>
+                  <td>{formatMoney(product.price)}</td>
+                  <td>{product.quantity}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </main>
   );
 }

@@ -1,3 +1,5 @@
+import styles from './Footer.module.css';
+
 const Footer = () => {
     return (
       <footer className="footer bg-secondary text-center text-lg-start">

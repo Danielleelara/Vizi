@@ -6,9 +6,14 @@ Link para visualizar no browser: https://desafio-vizi.vercel.app/
 
 ## Telas Desenvolvidas
 
-![Captura de tela 2022-04-24 185456](https://user-images.githubusercontent.com/78480991/164999175-c9ced786-3e8a-4df1-b5c6-4e4bf302c83e.png)
+### Home
 ![Captura de tela 2022-04-24 185357](https://user-images.githubusercontent.com/78480991/164999184-6f58ae0e-29e9-461a-b745-62e8bfa18d6b.png)
+![Captura de tela 2022-04-24 185456](https://user-images.githubusercontent.com/78480991/164999175-c9ced786-3e8a-4df1-b5c6-4e4bf302c83e.png)
+
+### Pagamentos
 ![Captura de tela 2022-04-24 185437](https://user-images.githubusercontent.com/78480991/164999195-352c7c63-6208-4837-8098-86d09d47dd06.png)
+
+### Detalhes
 ![Captura de tela 2022-04-24 185417](https://user-images.githubusercontent.com/78480991/164999200-de4367b0-9461-42c7-8efb-94f257afd8d6.png)
 
 

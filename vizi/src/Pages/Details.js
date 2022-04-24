@@ -38,6 +38,7 @@ export default function Details() {
         <li>Valor Total: R$ {payment?.amount}</li>
       </ul>
       <table className="table table-bordered">
+      <tbody>
         <tr>
           <th scope="col">Produto</th>
           <th scope="col">Descrição</th>
@@ -46,7 +47,7 @@ export default function Details() {
         </tr>
         {transactions?.products.map((product) => {
           return (
-            <tr>
+            <tr key={product.id}>
               <td>
                 <img
                   className="img-thumbnail img-fluid w-25"
@@ -60,6 +61,7 @@ export default function Details() {
             </tr>
           );
         })}
+        </tbody>
       </table>
     </div>
   );

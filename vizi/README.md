@@ -29,7 +29,7 @@ Link para visualizar no browser: https://desafio-vizi.vercel.app/
 
 O primeiro passo é clonar o projeto
 
-1. Acesse o link do projeto e faça o clone do repositório. https://github.com/Danielleelara/cadastro-de-clientes
+1. Acesse o link do projeto e faça o clone do repositório.https://github.com/Danielleelara/Vizi
 
 2. Na pasta raiz do projeto, rodar o comando abaixo para instalar as dependências.
 

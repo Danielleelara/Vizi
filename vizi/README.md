@@ -2,7 +2,6 @@
 
 Este projeto foi criado com o intuito de facilitar a gestão de uma lista de produtos, pagamentos e visualização dos seus detalhes. O projeto foi desenvolvido em ReactJs a partir da criação de uma SPA, usando react-routes para a implementação das rotas, o Axios para a busca dos dados na API e o Framework CSS Bootstrap.
 
-Link para visualizar no browser: https://desafio-vizi.vercel.app/
 
 ## Telas Desenvolvidas
 

@@ -11,7 +11,7 @@ export default function Home() {
       setProducts(response.data);
     }
     getProducts();
-  });
+  }, []);
 
   return (
     <main className="page container">
